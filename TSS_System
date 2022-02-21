@@ -1,0 +1,38 @@
+class Person
+{
+  * -- * UserRole;
+}
+
+class UserRole
+{
+  abstract;
+}
+
+class Scout
+{
+  * -- * UserRole;
+  * -- * Investigation;
+}
+
+class HeadCoach
+{
+  * -- * UserRole;
+  * -- * Investigation;
+}
+
+class Director
+{
+  * -- * UserRole;
+}
+
+class Player
+{
+  name;
+value;
+* -- * Person;
+    * -- * Investigation;
+}
+
+class Investigation
+{
+  }
