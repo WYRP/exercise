@@ -2,13 +2,13 @@ class Driver
 {
   name;
   immutable iD;
-  * -- * Schedule;
+    * -- * OneBus;
 }
 
 class Bus
 {
-  immutable licencePlate;
     * -- * Schedule;
+  *assignedToRoute -- 1 Route Route;
 }
 
 class Schedule
@@ -20,6 +20,17 @@ class Route
 {
   immutable Integer uniqueNum;
   enum Shift { morning, afternoon, night};
-  Shift shift;
   * -- * Schedule;
 }
+
+class OneBus
+{
+  isA Bus;
+    * -- * Shift;
+}
+
+class Shift
+{
+  typeOfShift;
+isA Route;
+  }
