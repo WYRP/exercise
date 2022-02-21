@@ -1,0 +1,75 @@
+class Task
+{
+  date;
+time;
+abstract;
+}
+
+class SnowRemoval
+{
+  isA Task;
+  1 -- 5..* Zone;
+}
+
+class LawnMowing
+{
+  isA Task;
+  1 -- 0..4 Park;
+  * -- * MowingExpert;
+}
+
+class Zone
+{
+  Integer zoneNum;
+}
+
+class PartOfStreet
+{
+  Integer startNum;
+Integer endNum;
+Integer length;
+Integer numOfLane;
+isA Street;
+  * -- 1 Zone;
+}
+
+class Park
+{
+  address;
+  squareMeter;
+}
+
+class Street
+{
+  name;
+}
+
+class Users
+{
+  name;
+  * -- * Role;
+}
+
+class Role
+{
+  enum ratingSystem {1, 2, 3, 4, 5};
+ratingSystem rating;
+Boolean satisfactory;
+abstract;
+}
+
+class RemovalExpert
+{
+  isA Role;
+  * -- * SnowRemoval;
+}
+
+class MowingExpert
+{
+    isA Role;
+}
+
+class Manager
+{
+  * -- * Users;
+}
