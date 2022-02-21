@@ -1,0 +1,25 @@
+class Driver
+{
+  name;
+  immutable iD;
+  * -- * Schedule;
+}
+
+class Bus
+{
+  immutable licencePlate;
+    * -- * Schedule;
+}
+
+class Schedule
+{
+  Date date;
+}
+
+class Route
+{
+  immutable Integer uniqueNum;
+  enum Shift { morning, afternoon, night};
+  Shift shift;
+  * -- * Schedule;
+}
