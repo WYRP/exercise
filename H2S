@@ -1,0 +1,70 @@
+class Users
+{
+  name;
+}
+
+class Resident
+{
+  phoneNum;
+email;
+isA UserRole;
+}
+
+class VolunteerDriver
+{
+  isA UserRole;
+}
+
+class H2SEmployee
+{
+  isA UserRole;
+  * -- * ItemInfo;
+}
+
+class UserRole
+{
+    * -- * Users;
+abstract;
+}
+
+class Vehicle
+{
+  Integer storageSpace;
+  * -- * VolunteerDriver;
+}
+
+class Address
+{
+  streetName;
+  Integer streetNum;
+    district;
+  * -- * Resident;
+  * -- * DistributionCenter;
+}
+
+class DistributionCenter
+{
+}
+
+class LogisticInfo
+{
+  route;
+  pickupTime;
+  deliveryTime;
+  * -- * VolunteerDriver;
+}
+
+class ItemInfo
+{
+  catogory;
+  weight;
+  quality;
+* -- * LogisticInfo;
+  * -- * DistributionCenter;
+  * -- * Resident;
+  * -- * MontrealFoodBank;
+}
+
+class MontrealFoodBank
+{
+}
